@@ -1,7 +1,6 @@
 <?php
 
-$dir = "/FATEC/4_SEMESTRE/Tmc.com/"; //CAMINHO VINICIUS 
-// $dir = "/FATEC/4_SEMESTRE/TG_TMG_WEB/"; //MEU CAMINHO
+$dir = "/FATEC/_GitFinal/TG_TMC_WEB"; //CAMINHO VINICIUS 
 
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', $_SERVER['DOCUMENT_ROOT']);

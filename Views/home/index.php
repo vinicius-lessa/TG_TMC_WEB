@@ -141,7 +141,7 @@
 
 <!-- CONTEÚDO DA PÁGINA DE BUSCA -->
 <section>
-    <?php if ($listaSugestao) { ?>
+    <?php if ($listaSugestao) { var_dump($listaSugestao);?>      
       <div class="row justify-content-center">
         <?php foreach ($listaSugestao as $itemSugestao) { ?>
           <div class="col-sm-6 col-12 mt-2">

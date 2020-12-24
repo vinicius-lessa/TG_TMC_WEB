@@ -4,11 +4,12 @@
 Author: Vinícius Lessa da Silva / Anderson Nascimento
 Since: 2020/06/19
 */
+
 $conf=[
   'host' => 'localhost',
   'user' => 'root',
   'pass' => '',
-  'data' => 'tmc_com'];
+  'data' => 'dbtg2021'];
 
   
 $conn = new mysqli($conf['host'], $conf['user'], $conf['pass'], $conf['data']);
