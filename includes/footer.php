@@ -35,7 +35,7 @@
     </div>
     <div class="row">
       <div class="col text-center ft-escuro">
-        <p><small>2020 - TMC - Trade Music Center - Anderson Nascimento e Vinicius Lessa da Silva</small></p>
+        <p><small>2020 - TMC - Trade Music Center - Vinicius Lessa da Silva</small></p>
       </div>
     </div>
   </div>

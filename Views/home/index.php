@@ -141,31 +141,50 @@
 
 <!-- CONTEÚDO DA PÁGINA DE BUSCA -->
 <section>
-    <?php if ($listaSugestao) { var_dump($listaSugestao);?>      
+    <?php if ($listaSugestao) {?>
       <div class="row justify-content-center">
-        <?php foreach ($listaSugestao as $itemSugestao) { ?>
+        
+        <?php
+         /* TESTEEEEEEEEEEEEE
+          
+          var_dump($listaSugestao);
+
+          foreach ($listaSugestao as $key => $value) {
+            echo "<hr>";
+            // var_dump($value);
+            echo "ID: " . $value->cod_anuncio . "<br>";
+            echo "Descrição: " . $value->descricao_anuncio . "<br>";
+              
+            // foreach ($ator->films as $filme) {
+            //     echo "Filme: " . $filme . "<br>";
+            // }            
+          }
+          */
+        ?>
+
+        <?php foreach ($listaSugestao as $key => $value) { ?>
           <div class="col-sm-6 col-12 mt-2">
-            <a href="<?php echo SITE_URL ?>/Views/produtos/detalhe.php?produto=<?php echo $itemSugestao['cod_produto'] ?>"
+            <a href="<?php echo SITE_URL ?>/Views/produtos/detalhe.php?produto=<?php echo $value->cod_anuncio ?>"
                class="linkCardsVioloes">
               <div class="card text-center border-0 card-produto">
                 <div class="card-header border-0 bg-transparent">
                   <h5 class="card-title text-uppercase">
-                    <?php echo $itemSugestao['nome_prod'] ?>
+                    <?php echo $value->titulo_anuncio ?>
                   </h5>
-                  <p class="mt-n3"><?php echo $itemSugestao['nome_categoria'] ?>
+                  <p class="mt-n3"><?php echo $value->descricao_categoria ?>
                   </p>
                 </div>
                 <img class="card-img-top px-4 img-cover"
-                     src="<?php echo SITE_URL ?>/images/produtos/<?php echo $itemSugestao['cover_img'] ?>"
-                     alt="Cover: <?php echo $itemSugestao['nome_prod'] ?>">
+                     src="<?php echo SITE_URL ?>/images/produtos/<?php echo $value->cover_img ?>"
+                     alt="Cover: <?php echo $value->titulo_anuncio ?>">
                 <div class="card-body">
                   <p class="card-text mt-n3"><small class="text-muted">À Vista</small></p>
                   <p class="card-text h2 font-weight-bold"><small>R$
-                    </small><?php echo number_format($itemSugestao['valor_un'], 2, ',', '.') ?>
+                    </small><?php echo number_format($value->valor_un, 2, ',', '.') ?>
                   </p>
                 </div>
                 <div class="card-footer border-0 bg-transparent">
-                  <a href="<?php echo SITE_URL ?>/Controllers/c_pedido.php?addProduto=<?php echo $itemSugestao['cod_produto'] ?>&valor=<?php echo $itemSugestao['valor_un'] ?>" class="btn btn-dark btn-block btn-success">
+                  <a href="<?php echo SITE_URL ?>/Controllers/c_pedido.php?addProduto=<?php echo $value->cod_anuncio ?>&valor=<?php echo $value->valor_un ?>" class="btn btn-dark btn-block btn-success">
                     Comprar
                   </a>
                 </div>
@@ -173,6 +192,7 @@
             </a>
           </div>
         <?php } ?>
+
       </div>
 
     <?php } else {

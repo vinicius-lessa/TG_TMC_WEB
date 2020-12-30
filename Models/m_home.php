@@ -19,13 +19,23 @@ function carregarDestaques($conn)
 /* FUNÇÃO PARA CARREGAR OS ITENS DE SUGESTÃO DA HOME */
 function carregarSugestoes($conn)
 {
-    $sql = "SELECT  p.cod_produto, p.valor_un, p.nome_prod, p.descricao_prod, p.cover_img, p.valor_un, c.nome_categoria
-      FROM produto p INNER JOIN categoria c ON p.cod_categoria = c.cod_categoria
-      WHERE p.estoque > 0 ORDER BY rand() LIMIT 8 ";
+    // $sql = "SELECT  a.cod_anuncio, a.valor_un, a.titulo_anuncio, a.descricao_anuncio, a.cover_img, a.cod_categoria, a.descricao_categoria
+    // FROM anuncios a INNER JOIN categoria c ON a.cod_categoria = c.cod_categoria
+    // WHERE a.status = 1 ORDER BY rand() LIMIT 8 ";
 
-    $stmt = $conn->prepare($sql) ;
-    $stmt->execute();
-    $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-    $stmt->close();
-    return $result;
+    // $stmt = $conn->prepare($sql) ;
+    // $stmt->execute();
+    // $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    // $stmt->close();
+    // return $result;
+
+    $url = "http://localhost/FATEC/_GitFinal/TG_TMC_BACKEND/SERVIDOR/anuncios.php/anuncios/";
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+
+    $resultado = json_decode(curl_exec($ch));
+    return $resultado;
+
 }

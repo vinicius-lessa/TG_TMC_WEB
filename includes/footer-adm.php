@@ -20,7 +20,7 @@
     <div class="row">
       <div class="col text-center">
         <!--ALTEREI-->
-        <p><small>2020 - Desenvolvido por Anderson Nascimento e Vinicius Lessa da Silva - TMC - Trade Music Center</small></p>
+        <p><small>2020 - Desenvolvido por Vinicius Lessa da Silva - TMC - Trade Music Center</small></p>
       </div>
     </div>
   </div>
